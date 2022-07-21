@@ -10,26 +10,27 @@ main {
   background-color: #fb6b6b;
 }
 
+.title {
+  color: #ffffff;
+  line-height: 44px;
+  font-size: 36px;
+  font-family: "Righteous", cursive;
+}
+
 .home-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.home-page > h1 {
+  padding-bottom: 30px;
+}
 .home-logo {
   width: 136px;
   height: 161px;
   padding-bottom: 13px;
 }
-
-.home-title {
-  color: #ffffff;
-  padding-bottom: 30px;
-  line-height: 44px;
-  font-size: 36px;
-  font-family: "Righteous", cursive;
-}
-
 .home-button {
   color: #d70900;
   height: 54px;
@@ -42,6 +43,45 @@ main {
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
+}
+
+.questions-header {
+  width: 260px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 33px;
+}
+.questions-header img {
+  width: 52px;
+  height: 60px;
+  margin-right: 18px;
+}
+.question > button {
+  padding: 0 15px;
+  width: 300px;
+  height: 65px;
+  color: black;
+  display: flex;
+  font-family: "Recursive", sans-serif;
+  font-size: 700;
+  font-size: 16px;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d70900;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+}
+.question > button:active {
+  transform: translateY(1px);
+}
+
+.question button > ion-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .hidden {

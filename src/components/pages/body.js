@@ -1,7 +1,5 @@
-import React from "react";
-
-export default function Home() {
-  let [wasClicked, setClicked] = React.useState(false);
+// prop drilling
+export default function Body({ wasClicked }, { setClicked }) {
   return (
     <div className={wasClicked ? "hidden" : "home-page"}>
       <img
@@ -9,10 +7,12 @@ export default function Home() {
         alt="ZapRecall"
         className="home-logo"
       />
-      <h1 className="home-title">ZapRecall</h1>
+      <h1 className="title">ZapRecall</h1>
       <button
         className="home-button"
-        onClick={() => setClicked((prevState) => !prevState)}
+        onClick={() => {
+          setClicked(true);
+        }}
       >
         <p>Iniciar Recall!</p>
       </button>
