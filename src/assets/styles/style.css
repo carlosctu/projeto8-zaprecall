@@ -86,7 +86,7 @@ main {
 }
 
 .card-question {
-  height: 131px;
+  height: 141px;
   width: 300px;
   position: relative;
   margin-bottom: 20px;
@@ -103,9 +103,6 @@ main {
   transition: all 0.5s;
   transform-style: preserve-3d;
 }
-/* .card-question-face:active {
-  transform: translateY(2px);
-} */
 .card > p {
   font-size: 18px;
   font-weight: 22px;
@@ -132,6 +129,43 @@ main {
 .flipback {
   transform: rotateY(-180deg);
 }
+.card-buttons {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+}
+.card-question-back-button {
+  margin: 0 0 8px 11px;
+  width: 85px;
+  height: 37px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.card-question-back-button:hover {
+  transform: translateY(2px);
+}
+.card-question-back-button > p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 14px;
+  text-align: center;
+  font-family: "Recursive", sans-serif;
+}
+.card-question-back-button:nth-child(1) {
+  background-color: #ff3030;
+}
+.card-question-back-button:nth-child(2) {
+  background-color: #ff922e;
+}
+.card-question-back-button:nth-child(3) {
+  background-color: #2fbe34;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -140,12 +174,15 @@ main {
   height: 70px;
   background-color: #ffffff;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+.footer > p {
   font-family: "Recursive", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 22;
+  line-height: 22px;
 }
 
 .hidden {

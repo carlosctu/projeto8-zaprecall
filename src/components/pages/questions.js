@@ -1,53 +1,58 @@
 import React from "react";
 import logo from "../../assets/img/logo.png";
-function comparador() {
+function Random() {
   return Math.random() - 0.5;
 }
 function Question(props) {
+  const [wasClicked, setClicked] = React.useState(false);
   const [isFlip, setFlip] = React.useState(false);
   const faceQuestionCard = "card card-question-face";
   const backQuestionCard = "card card-question-back";
+  const flipBackCard = "card card-question-face flipback";
+  const flipCard = "card card-question-back flip";
   return (
-    <div>
-      <div className="hidden">
-        <button>
+    <>
+      <div className={wasClicked ? "hidden" : "question"}>
+        <button onClick={() => setClicked((prevState) => !prevState)}>
           <p>Pergunta {props.index}</p>
           <ion-icon className="question-play" name="play-outline"></ion-icon>
         </button>
       </div>
-      <div className="card-question">
-        <div
-          className={
-            isFlip ? "card card-question-face flipback" : faceQuestionCard
-          }
-        >
+      <div className={wasClicked ? "card-question" : "hidden"}>
+        <div className={isFlip ? flipBackCard : faceQuestionCard}>
           <p>{props.cardsQuestion[props.position].question}</p>
           <ion-icon
             onClick={() => setFlip((prevState) => !prevState)}
             name="repeat-outline"
           ></ion-icon>
         </div>
-        <div
-          className={isFlip ? "card card-question-back flip" : backQuestionCard}
-        >
+        <div className={isFlip ? flipCard : backQuestionCard}>
           <p>{props.cardsQuestion[props.position].answer}</p>
-          <ion-icon
-            onClick={() => setFlip((prevState) => !prevState)}
-            name="repeat-outline"
-          ></ion-icon>
+          <div className="card-buttons">
+            <div
+              className="card-question-back-button"
+              onClick={() => setFlip((prevState) => !prevState)}
+            >
+              <p>Não lembrei</p>
+            </div>
+            <div
+              className="card-question-back-button"
+              onClick={() => setFlip((prevState) => !prevState)}
+            >
+              <p>Quase não lembrei</p>
+            </div>
+            <div
+              className="card-question-back-button"
+              onClick={() => setFlip((prevState) => !prevState)}
+            >
+              <p>Zap!</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
-
-// function QuestionFlipped({ index }) {
-//   return (
-//     <div>
-//       <p>{answer[e]}</p>
-//     </div>
-//   );
-// }
 
 export default function Questions({ wasClicked }) {
   const index = [1, 2, 3, 4];
@@ -87,7 +92,7 @@ export default function Questions({ wasClicked }) {
         "R: dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
     },
   ];
-  cardsQuestion.sort(comparador);
+  cardsQuestion.sort(Random);
   return (
     <>
       <div className="main">
