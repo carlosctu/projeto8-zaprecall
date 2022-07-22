@@ -19,7 +19,6 @@ export default function Home() {
           <p>Iniciar Recall!</p>
         </button>
       </div>
-      {console.log(wasClicked)}
       <Questions wasClicked={wasClicked} />
       <Footer wasClicked={wasClicked} />
     </>

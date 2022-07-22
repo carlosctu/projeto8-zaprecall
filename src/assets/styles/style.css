@@ -89,7 +89,7 @@ main {
   height: 141px;
   width: 300px;
   position: relative;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .card {
   width: 100%;
@@ -164,6 +164,18 @@ main {
 }
 .card-question-back-button:nth-child(3) {
   background-color: #2fbe34;
+}
+
+.question-done p{
+  color: red;
+  text-align: center;
+  text-decoration: line-through;
+}
+
+ion-icon[name="close-circle-outline"]{
+  color: red;
+  width: 100px;
+  height: 100px;
 }
 
 .footer {
