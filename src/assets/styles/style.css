@@ -80,10 +80,6 @@ main {
 .question > button:active {
   transform: translateY(1px);
 }
-.question button > ion-icon {
-  width: 20px;
-  height: 20px;
-}
 
 .card-question {
   height: 141px;
@@ -166,30 +162,36 @@ main {
   background-color: #2fbe34;
 }
 
-.question-wrong p{
-  color: #FF3030;
+.question-wrong p {
+  color: #ff3030;
   text-align: center;
   text-decoration: line-through;
 }
-.question-alert p{
-  color: #FF922E;
+.question-alert p {
+  color: #ff922e;
   text-align: center;
   text-decoration: line-through;
 }
-.question-right p{
-  color: #2FBE34;
+.question-right p {
+  color: #2fbe34;
   text-align: center;
   text-decoration: line-through;
 }
 
-ion-icon[name="close-circle"]{
-  fill: #FF3030;
+ion-icon[name="close-circle"] {
+  fill: #ff3030;
+  height: 23px;
+  width: 23px;
 }
-ion-icon[name="alert-circle"]{
-  fill: #FF922E;
+ion-icon[name="alert-circle"] {
+  fill: #ff922e;
+  height: 23px;
+  width: 23px;
 }
-ion-icon[name="checkmark-circle"]{
-  fill: #2FBE34;
+ion-icon[name="checkmark-circle"] {
+  fill: #2fbe34;
+  height: 23px;
+  width: 23px;
 }
 
 .footer {
@@ -200,17 +202,61 @@ ion-icon[name="checkmark-circle"]{
   height: 70px;
   background-color: #ffffff;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  /* box-sizing: border-box; */
 }
+
 .footer > p {
+  margin-top: 8px;
   font-family: "Recursive", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
 }
-
+.footer-icons {
+  margin: 8px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-expanded {
+  height: 170px;
+}
+.footer-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-message p {
+  margin-top: 8px;
+  font-family: "Recursive", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  line-height: 22px;
+}
+.message-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message-title >img{
+  display: flex;
+  width: 23px;
+  height: 23px;
+  margin-right: 12px;
+}
+.message-title > p{
+ font-weight: 700;
+}
+.message-body{
+  width: 222px;
+  padding: 0 22px;
+}
 .hidden {
   display: none;
 }

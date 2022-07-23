@@ -1,17 +1,30 @@
 import React from "react";
 
-function ValidateQuestion(answer, setIconName, setDone) {
-  console.log(answer)
+function ValidateQuestion(
+  answer,
+  setIconName,
+  setDone,
+  setIconsFooter,
+  iconsFooter,
+  setWrongQuestion
+) {
+  const Icons = ["checkmark-circle", "alert-circle", "close-circle"];
+  console.log("1: " + iconsFooter);
   if (answer === "Zap") {
     setIconName("checkmark-circle");
     setDone("question-right");
+    setIconsFooter([...iconsFooter, Icons[0]]);
   } else if (answer === "Quase não lembrei") {
     setIconName("alert-circle");
     setDone("question-alert");
+    setIconsFooter([...iconsFooter, Icons[1]]);
   } else if (answer === "Não lembrei") {
     setIconName("close-circle");
     setDone("question-wrong");
+    setIconsFooter([...iconsFooter, Icons[2]]);
+    setWrongQuestion(true);
   }
+  console.log("2: " + iconsFooter);
 }
 
 function CardButtons(props) {
@@ -25,7 +38,10 @@ function CardButtons(props) {
         ValidateQuestion(
           these.target.innerText,
           props.setIconName,
-          props.setDone
+          props.setDone,
+          props.setIconsFooter,
+          props.iconsFooter,
+          props.setWrongQuestion
         );
       }}
     >
@@ -67,6 +83,9 @@ function QuestionCard(props) {
               setIcon={props.setIcon}
               setIconName={props.setIconName}
               setCounter={props.setCounter}
+              setIconsFooter={props.setIconsFooter}
+              iconsFooter={props.iconsFooter}
+              setWrongQuestion={props.setWrongQuestion}
             />
           ))}
         </div>
@@ -97,6 +116,9 @@ export default function Question(props) {
           setIcon={setIcon}
           setIconName={setIconName}
           setCounter={props.setCounter}
+          setIconsFooter={props.setIconsFooter}
+          iconsFooter={props.iconsFooter}
+          setWrongQuestion={props.setWrongQuestion}
         />
       </div>
     </>

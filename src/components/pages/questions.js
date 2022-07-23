@@ -48,7 +48,7 @@ export default function Questions(props) {
   return (
     <>
       <div className="main">
-        <header className="questions-header" >
+        <header className="questions-header">
           <img src={logo} alt="ZapRecall" />
           <h1 className="title">ZapRecall</h1>
         </header>
@@ -60,6 +60,9 @@ export default function Questions(props) {
               position={index}
               index={e}
               setCounter={props.setCounter}
+              setIconsFooter={props.setIconsFooter}
+              iconsFooter={props.iconsFooter}
+              setWrongQuestion={props.setWrongQuestion}
             />
           ))}
         </div>
