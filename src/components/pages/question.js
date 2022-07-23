@@ -1,15 +1,32 @@
 import React from "react";
 
+function ValidateQuestion(answer, setIconName, setDone) {
+  console.log(answer)
+  if (answer === "Zap") {
+    setIconName("checkmark-circle");
+    setDone("question-right");
+  } else if (answer === "Quase não lembrei") {
+    setIconName("alert-circle");
+    setDone("question-alert");
+  } else if (answer === "Não lembrei") {
+    setIconName("close-circle");
+    setDone("question-wrong");
+  }
+}
+
 function CardButtons(props) {
-    // let test;
   return (
     <div
       className="card-question-back-button"
       onClick={(these) => {
         props.setIcon((prevState) => !prevState);
         props.setClicked((prevState) => !prevState);
-        props.setDone("question-done");
-        console.log(these.currentTarget.className)
+        props.setCounter((prevState) => prevState + 1);
+        ValidateQuestion(
+          these.target.innerText,
+          props.setIconName,
+          props.setDone
+        );
       }}
     >
       <p>{props.name}</p>
@@ -48,6 +65,8 @@ function QuestionCard(props) {
               setClicked={props.setClicked}
               setDone={props.setDone}
               setIcon={props.setIcon}
+              setIconName={props.setIconName}
+              setCounter={props.setCounter}
             />
           ))}
         </div>
@@ -59,17 +78,14 @@ function QuestionCard(props) {
 export default function Question(props) {
   const [isDone, setDone] = React.useState("");
   const [icon, setIcon] = React.useState(false);
+  const [iconName, setIconName] = React.useState("");
   const [wasClicked, setClicked] = React.useState(false);
-  console.log(icon);
   return (
     <>
       <div className={wasClicked ? "hidden" : `question ${isDone}`}>
         <button onClick={() => setClicked((prevState) => !prevState)}>
           <p>Pergunta {props.index}</p>
-          <ion-icon
-            className={icon ? "icon-wrong" : "question-play"}
-            name={icon ? "close-circle-outline" : "play-outline"}
-          ></ion-icon>
+          <ion-icon name={icon ? iconName : "play-outline"}></ion-icon>
         </button>
       </div>
       <div className={wasClicked ? "card-question" : "hidden"}>
@@ -79,6 +95,8 @@ export default function Question(props) {
           setClicked={setClicked}
           setDone={setDone}
           setIcon={setIcon}
+          setIconName={setIconName}
+          setCounter={props.setCounter}
         />
       </div>
     </>

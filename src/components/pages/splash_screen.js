@@ -1,26 +1,21 @@
 import React from "react";
-import Questions from "./questions";
-import Footer from "./footer";
 import logo from "../../assets/img/logo.png";
 
-export default function Home() {
-  const [wasClicked, setClicked] = React.useState(false);
+export default function SplashScreen({ setHomePage }) {
   return (
     <>
-      <div className={wasClicked ? "hidden" : "home-page"}>
+      <div className="home-page">
         <img src={logo} alt="ZapRecall" className="home-logo" />
         <h1 className="title">ZapRecall</h1>
         <button
           className="home-button"
           onClick={() => {
-            setClicked((prevState) => !prevState);
+            setHomePage(true);
           }}
         >
           <p>Iniciar Recall!</p>
         </button>
       </div>
-      <Questions wasClicked={wasClicked} />
-      <Footer wasClicked={wasClicked} />
     </>
   );
 }

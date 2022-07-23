@@ -6,7 +6,7 @@ function Random() {
   return Math.random() - 0.5;
 }
 
-export default function Questions({ wasClicked }) {
+export default function Questions(props) {
   const i = [1, 2, 3, 4];
   const cardsQuestion = [
     {
@@ -48,17 +48,18 @@ export default function Questions({ wasClicked }) {
   return (
     <>
       <div className="main">
-        <header className={wasClicked ? "questions-header" : "hidden"}>
+        <header className="questions-header" >
           <img src={logo} alt="ZapRecall" />
           <h1 className="title">ZapRecall</h1>
         </header>
-        <div className={wasClicked ? "questions" : "hidden"}>
+        <div className="questions">
           {i.map((e, index) => (
             <Question
               key={index}
               cardsQuestion={cardsQuestion}
               position={index}
               index={e}
+              setCounter={props.setCounter}
             />
           ))}
         </div>
