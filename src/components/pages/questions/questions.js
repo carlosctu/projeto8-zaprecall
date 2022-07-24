@@ -1,7 +1,7 @@
 import React from "react";
 import Question from "./question";
 
-import logo from "../../assets/img/logo.png";
+import logo from "../../../assets/img/logo.png";
 function Random() {
   return Math.random() - 0.5;
 }
@@ -57,7 +57,6 @@ export default function Questions(props) {
             <Question
               key={index}
               cardsQuestion={cardsQuestion}
-              position={index}
               index={e}
               setCounter={props.setCounter}
               setIconsFooter={props.setIconsFooter}

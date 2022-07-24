@@ -1,4 +1,3 @@
-// prop drilling
 export default function Body({ wasClicked }, { setClicked }) {
   return (
     <div className={wasClicked ? "hidden" : "home-page"}>
