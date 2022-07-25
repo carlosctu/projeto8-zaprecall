@@ -1,13 +1,13 @@
 export default function CardButtons(props) {
   return (
-    <div
+    <button
       className="card-question-back-button"
-      onClick={(these) => {
+      onClick={(event) => {
         props.setIcon((prevState) => !prevState);
         props.setClicked((prevState) => !prevState);
         props.setCounter((prevState) => prevState + 1);
         ValidateQuestion(
-          these.target.innerText,
+          event.target.innerText,
           props.setIconName,
           props.setDone,
           props.setIconsFooter,
@@ -17,7 +17,7 @@ export default function CardButtons(props) {
       }}
     >
       <p>{props.cardName}</p>
-    </div>
+    </button>
   );
 }
 
