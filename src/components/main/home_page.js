@@ -1,7 +1,8 @@
-import Questions from "./questions/questions";
-import Footer from "./footer";
 import React from "react";
-export default function HomePage() {
+import Questions from "../questions/questions";
+import Footer from "../footer/footer";
+import "./style.css";
+export default function HomePage({ useDeck }) {
   const [isCounter, setCounter] = React.useState(0);
   const [iconsFooter, setIconsFooter] = React.useState([]);
   const [wrongQuestion, setWrongQuestion] = React.useState(false);
@@ -12,6 +13,7 @@ export default function HomePage() {
         iconsFooter={iconsFooter}
         setIconsFooter={setIconsFooter}
         setWrongQuestion={setWrongQuestion}
+        useDeck={useDeck}
       />
       <Footer
         isCounter={isCounter}

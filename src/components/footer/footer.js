@@ -1,6 +1,7 @@
 import React from "react";
 import Party from "../../assets/img/party.png";
 import Sad from "../../assets/img/sad.png";
+import "./style.css"
 export default function Footer(props) {
   let setMessage;
   if (props.isCounter === 4) {

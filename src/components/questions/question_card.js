@@ -9,14 +9,14 @@ export default function QuestionCard(props) {
       <div
         className={isFlip ? `${faceQuestionCard} flipback` : faceQuestionCard}
       >
-        <p>{props.cardsQuestion[props.index].question}</p>
+        <p>{props.useDeck[props.index].question}</p>
         <ion-icon
           onClick={() => setFlip((prevState) => !prevState)}
           name="repeat-outline"
         ></ion-icon>
       </div>
       <div className={isFlip ? `${backQuestionCard} flip` : backQuestionCard}>
-        <p>{props.cardsQuestion[props.index].answer}</p>
+        <p>{props.useDeck[props.index].answer}</p>
         <div className="card-buttons">{props.children}</div>
       </div>
     </>

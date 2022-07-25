@@ -1,0 +1,70 @@
+
+main {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fb6b6b;
+}
+.title {
+  color: #ffffff;
+  line-height: 44px;
+  font-size: 36px;
+  font-family: "Righteous", cursive;
+}
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-page > h1 {
+  padding-bottom: 30px;
+}
+.home-logo {
+  width: 136px;
+  height: 161px;
+  padding-bottom: 13px;
+}
+.home-button {
+  color: #d70900;
+  height: 54px;
+  width: 100%;
+  font-family: "Recursive", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+}
+.select-form {
+  width: 246px;
+  height: 43px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 16px;
+  color: #adadad;
+  font-family: "Righteous", cursive;
+  padding-left: 12px;
+}
+.select-form option:nth-child(n+2) {
+  color: black;
+}
+
+.select-form option:hover {
+  cursor: pointer;
+}
+
+.no-pointer {
+  pointer-events: none;
+}

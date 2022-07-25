@@ -32,15 +32,15 @@ function ValidateQuestion(
   const Icons = ["checkmark-circle", "alert-circle", "close-circle"];
   if (answer === "Zap") {
     setIconName("checkmark-circle");
-    setDone("question-right");
+    setDone("question-right no-pointer");
     setIconsFooter([...iconsFooter, Icons[0]]);
   } else if (answer === "Quase não lembrei") {
     setIconName("alert-circle");
-    setDone("question-alert");
+    setDone("question-alert no-pointer");
     setIconsFooter([...iconsFooter, Icons[1]]);
   } else if (answer === "Não lembrei") {
     setIconName("close-circle");
-    setDone("question-wrong");
+    setDone("question-wrong no-pointer");
     setIconsFooter([...iconsFooter, Icons[2]]);
     setWrongQuestion(true);
   }

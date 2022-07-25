@@ -1,6 +1,7 @@
 import React from "react";
 import QuestionCard from "./question_card";
 import CardButtons from "./question_card_buttons.js";
+import "./style.css";
 
 export default function Question(props) {
   const [isDone, setDone] = React.useState("");
@@ -8,6 +9,7 @@ export default function Question(props) {
   const [iconName, setIconName] = React.useState("");
   const [wasClicked, setClicked] = React.useState(false);
   const cardButtonsName = ["Não lembrei", "Quase não lembrei", "Zap"];
+  console.log(props.useDeck)
   return (
     <>
       <div className={wasClicked ? "hidden" : `question ${isDone}`}>
@@ -17,7 +19,7 @@ export default function Question(props) {
         </button>
       </div>
       <div className={wasClicked ? "card-question" : "hidden"}>
-        <QuestionCard cardsQuestion={props.cardsQuestion} index={props.index}>
+        <QuestionCard useDeck={props.useDeck} index={props.index}>
           {cardButtonsName.map((card, index) => (
             <CardButtons
               key={index}
