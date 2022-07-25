@@ -123,6 +123,8 @@ function SetDeck(deck, setDeck, setReady) {
       setDeck([...deckCss]);
       deckCss.sort(Random);
     }
+  } else {
+    setReady("no-pointer");
   }
 }
 
