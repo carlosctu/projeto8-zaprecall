@@ -111,17 +111,19 @@ function Random() {
 }
 
 function SetDeck(deck, setDeck, setReady) {
-  if (deck === "deckReact") {
-    setDeck([...deckReact]);
-    deckReact.sort(Random);
-  } else if (deck === "deckJs") {
-    setDeck([...deckJs]);
-    deckJs.sort(Random);
-  } else if (deck === "deckCss") {
-    setDeck([...deckCss]);
-    deckCss.sort(Random);
+  if (deck !== "default") {
+    if (deck === "deckReact") {
+      setDeck([...deckReact]);
+      deckReact.sort(Random);
+    } else if (deck === "deckJs") {
+      setDeck([...deckJs]);
+      deckJs.sort(Random);
+    } else if (deck === "deckCss") {
+      setDeck([...deckCss]);
+      deckCss.sort(Random);
+    }
+    setReady("");
   }
-  setReady("");
 }
 
 export default function SplashScreen(props) {
@@ -136,10 +138,9 @@ export default function SplashScreen(props) {
           onChange={(these) =>
             SetDeck(these.target.value, props.setDeck, setReady)
           }
+          value="default"
         >
-          <option selected={true} disabled="disabled">
-            Escolha seu deck
-          </option>
+          <option>Escolha seu deck</option>
           <option value="deckReact">React</option>
           <option value="deckJs">JavaScript</option>
           <option value="deckCss">CSS</option>
