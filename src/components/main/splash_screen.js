@@ -130,6 +130,12 @@ function SetDeck(deck, setDeck, setReady) {
 
 export default function SplashScreen(props) {
   const [notReady, setReady] = React.useState("no-pointer");
+  const options = [
+    { value: "default", text: "Escolha seu deck" },
+    { value: "deckReact", text: "React" },
+    { value: "deckJs", text: "JavaScript" },
+    { value: "deckCss", text: "CSS" },
+  ];
   return (
     <>
       <div className="home-page">
@@ -141,10 +147,13 @@ export default function SplashScreen(props) {
             SetDeck(these.target.value, props.setDeck, setReady)
           }
         >
-          <option value="default">Escolha seu deck</option>
-          <option value="deckReact">React</option>
-          <option value="deckJs">JavaScript</option>
-          <option value="deckCss">CSS</option>
+          {options.map((option, index) => {
+            return (
+              <option key={index} value={option.value}>
+                {option.text}
+              </option>
+            );
+          })}
         </select>
         <button
           className={`home-button ${notReady}`}
