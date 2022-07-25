@@ -6,7 +6,6 @@ import React from "react";
 export default function App() {
   const [showHomePage, setHomePage] = React.useState(false);
   const [useDeck, setDeck] = React.useState([]);
-  console.log(useDeck)
   return (
     <main>
       {showHomePage ? (

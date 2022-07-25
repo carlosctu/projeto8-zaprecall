@@ -9,7 +9,6 @@ export default function Question(props) {
   const [iconName, setIconName] = React.useState("");
   const [wasClicked, setClicked] = React.useState(false);
   const cardButtonsName = ["Não lembrei", "Quase não lembrei", "Zap"];
-  console.log(props.useDeck)
   return (
     <>
       <div className={wasClicked ? "hidden" : `question ${isDone}`}>
