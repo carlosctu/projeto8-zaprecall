@@ -7,7 +7,6 @@ export default function Footer(props) {
   if (props.isCounter === 4) {
     setMessage = !setMessage;
   }
-  alert(props.iconsFooter)
   return (
     <div className={setMessage ? "footer footer-expanded" : "footer"}>
       <div className={setMessage ? "footer-message" : "hidden"}>
