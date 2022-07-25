@@ -112,6 +112,7 @@ function Random() {
 
 function SetDeck(deck, setDeck, setReady) {
   if (deck !== "default") {
+    setReady("");
     if (deck === "deckReact") {
       setDeck([...deckReact]);
       deckReact.sort(Random);
@@ -122,7 +123,6 @@ function SetDeck(deck, setDeck, setReady) {
       setDeck([...deckCss]);
       deckCss.sort(Random);
     }
-    setReady("");
   }
 }
 
@@ -138,9 +138,8 @@ export default function SplashScreen(props) {
           onChange={(these) =>
             SetDeck(these.target.value, props.setDeck, setReady)
           }
-          value="default"
         >
-          <option>Escolha seu deck</option>
+          <option value="default">Escolha seu deck</option>
           <option value="deckReact">React</option>
           <option value="deckJs">JavaScript</option>
           <option value="deckCss">CSS</option>
